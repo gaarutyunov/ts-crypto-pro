@@ -1,0 +1,4 @@
+export enum ContentEncoding {
+	CADESCOM_BASE64_TO_BINARY = 0x01,
+	CADESCOM_STRING_TO_UCS2LE = 0x00
+}

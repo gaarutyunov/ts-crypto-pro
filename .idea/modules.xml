@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../cadesplugin-crypto-pro-api/.idea/cadesplugin-crypto-pro-api.iml" filepath="$PROJECT_DIR$/../cadesplugin-crypto-pro-api/.idea/cadesplugin-crypto-pro-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../crypto-pro/.idea/crypto-pro.iml" filepath="$PROJECT_DIR$/../crypto-pro/.idea/crypto-pro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ts-crypto-pro.iml" filepath="$PROJECT_DIR$/.idea/ts-crypto-pro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ts-input-mask/.idea/ts-input-mask.iml" filepath="$PROJECT_DIR$/../ts-input-mask/.idea/ts-input-mask.iml" />
+    </modules>
+  </component>
+</project>

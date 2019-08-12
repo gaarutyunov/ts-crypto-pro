@@ -1,0 +1,3 @@
+export enum Time {
+	AUTHENTICATED_ATTRIBUTE_SIGNING_TIME
+}

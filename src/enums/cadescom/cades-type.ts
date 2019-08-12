@@ -1,0 +1,5 @@
+export enum CadesType {
+	CADESCOM_CADES_DEFAULT = 0,
+	CADESCOM_CADES_BES = 1,
+	CADESCOM_CADES_X_LONG_TYPE_1 = 0x5d
+}
