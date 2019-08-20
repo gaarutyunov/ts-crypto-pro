@@ -1,4 +1,4 @@
-import {CadesMethods} from "./cades-methods";
+import {CadesMethods} from "./helpers/cades-methods";
 import {CertificateAdjuster} from "./helpers";
 import {
 	CADESCOM_CADES_TYPE,

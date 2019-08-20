@@ -1,5 +1,5 @@
 import {CadesBrowserPlugin} from "@delagen/cadesplugin";
-import {SyncOrAsyncMap, SyncOrAsyncMapValue} from "./helpers";
+import {SyncOrAsyncMap, SyncOrAsyncMapValue} from "./index";
 
 export class CadesMethods {
 	constructor(private readonly _pluginObject: CadesBrowserPlugin) {

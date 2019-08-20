@@ -1,4 +1,4 @@
-import {CadesMethods} from './cades-methods';
+import {CadesMethods} from "./helpers/cades-methods";
 import {
 	CADESCOM_CADES_TYPE,
 	CADESCOM_CONTENT_ENCODING_TYPE,
@@ -7,9 +7,9 @@ import {
 	CAPICOM_STORE_NAME,
 	CAPICOM_STORE_OPEN_MODE,
 	IAbout, ICertificates, ICPSigner, IStore,
-} from '@delagen/cadesplugin';
-import {CertificateAdjuster} from './helpers';
-import {ICadesSignedDataExtended, ICertificateExtended} from './extensions';
+} from "@delagen/cadesplugin";
+import {CertificateAdjuster} from "./helpers";
+import {ICadesSignedDataExtended, ICertificateExtended} from "./extensions";
 
 export class CryptoProApiSync extends CadesMethods {
 	public about(): IAbout {
