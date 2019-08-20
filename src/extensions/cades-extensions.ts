@@ -17,7 +17,7 @@ export interface ICertificateExtendedAsync extends Async<ICertificateExtended> {
 }
 
 export interface ICadesSignedDataExtended extends ICadesSignedData {
-	CoSignCades?(signer?: ICPSigner, CadesType?: CADESCOM_CADES_TYPE, EncodingType?: CAPICOM_ENCODING_TYPE): string;
+	CoSignCades(signer?: ICPSigner, CadesType?: CADESCOM_CADES_TYPE, EncodingType?: CAPICOM_ENCODING_TYPE): string;
 }
 
 export interface ICadesSignedDataExtendedAsync extends Async<ICadesSignedDataExtended>, ICadesSignedDataAsync {

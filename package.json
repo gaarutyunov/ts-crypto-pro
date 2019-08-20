@@ -33,6 +33,7 @@
 		"webpack-dev-server": "~3.7.2"
 	},
 	"dependencies": {
-		"@delagen/cadesplugin": "^1.0.2"
+		"@delagen/cadesplugin": "^1.0.2",
+		"bowser": "^2.5.3"
 	}
 }

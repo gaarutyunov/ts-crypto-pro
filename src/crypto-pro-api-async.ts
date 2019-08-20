@@ -1,21 +1,21 @@
 import {CadesMethods} from "./cades-methods";
-import {CertificateAdjuster, SyncOrAsyncMapValue} from "./helpers";
+import {CertificateAdjuster} from "./helpers";
 import {
 	CADESCOM_CADES_TYPE,
 	CADESCOM_CONTENT_ENCODING_TYPE,
 	CAPICOM_CERTIFICATE_FIND_TYPE, CAPICOM_PROPID,
 	CAPICOM_STORE_LOCATION,
 	CAPICOM_STORE_NAME,
-	CAPICOM_STORE_OPEN_MODE,
+	CAPICOM_STORE_OPEN_MODE, IAboutAsync,
 	ICertificatesAsync, ICPSignerAsync,
 	IStoreAsync
 } from "@delagen/cadesplugin";
 import {ICadesSignedDataExtendedAsync, ICertificateExtendedAsync} from "./extensions";
 
-export class CryptoProApi extends CadesMethods {
-	public about(): SyncOrAsyncMapValue<'CAdESCOM.About'> {
+export class CryptoProApiAsync extends CadesMethods {
+	public async about(): Promise<IAboutAsync> {
 		try {
-			return this.oAbout();
+			return await this.oAbout() as IAboutAsync;
 		} catch (e) {
 			throw new Error(e.message);
 		}
@@ -32,7 +32,7 @@ export class CryptoProApi extends CadesMethods {
 			const certificates: ICertificatesAsync = await store.Certificates;
 
 			if (!certificates) {
-				throw new Error('Нет доступных сертификатов');
+				throw new Error("Нет доступных сертификатов");
 			}
 
 			const findCertificate: ICertificatesAsync = await certificates.Find(CAPICOM_CERTIFICATE_FIND_TYPE.CAPICOM_CERTIFICATE_FIND_TIME_VALID);
@@ -44,7 +44,7 @@ export class CryptoProApi extends CadesMethods {
 			const count: number = await findCertsWithPrivateKey.Count;
 
 			if (!count) {
-				throw new Error('Нет сертификатов с приватным ключом');
+				throw new Error("Нет сертификатов с приватным ключом");
 			}
 
 			const countArray: Array<null> = Array(count).fill(null);
@@ -79,7 +79,7 @@ export class CryptoProApi extends CadesMethods {
 	public async currentCadesCert(thumbprint: string): Promise<ICertificateExtendedAsync> {
 		try {
 			if (!thumbprint) {
-				throw new Error('Не указано thumbprint значение сертификата');
+				throw new Error("Не указано thumbprint значение сертификата");
 			}
 			const store: IStoreAsync = await this.oStore() as IStoreAsync;
 			await store.Open(
@@ -111,7 +111,7 @@ export class CryptoProApi extends CadesMethods {
 	public async getCert(thumbprint: string): Promise<CertificateAdjuster> {
 		try {
 			if (!thumbprint) {
-				throw new Error('Не указано thumbprint значение сертификата');
+				throw new Error("Не указано thumbprint значение сертификата");
 			}
 
 			const certList = await this.getCertsList();
@@ -131,7 +131,7 @@ export class CryptoProApi extends CadesMethods {
 	public async signBase64(thumbprint: string, base64: string, bDetached?: boolean, coSign?: boolean): Promise<string> {
 		try {
 			if (!thumbprint) {
-				throw new Error('Не указано thumbprint значение сертификата');
+				throw new Error("Не указано thumbprint значение сертификата");
 			}
 
 			const currentCert: ICertificateExtendedAsync = await this.currentCadesCert(thumbprint) as ICertificateExtendedAsync;
@@ -144,8 +144,7 @@ export class CryptoProApi extends CadesMethods {
 
 			if (coSign) {
 				await oSignedData.VerifyCades(base64, CADESCOM_CADES_TYPE.CADESCOM_CADES_BES);
-				// @ts-ignore
-				return await oSignedData.CoSignCades(await oSigner, base64, CADESCOM_CADES_TYPE.CADESCOM_CADES_BES);
+				return await oSignedData.CoSignCades(await oSigner, CADESCOM_CADES_TYPE.CADESCOM_CADES_BES);
 			}
 
 			return await oSignedData.SignCades(await oSigner, CADESCOM_CADES_TYPE.CADESCOM_CADES_BES, bDetached);

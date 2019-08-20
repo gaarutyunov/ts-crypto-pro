@@ -28,8 +28,8 @@ export function parseCertInfo(tags: TagTranslation[], infoString: string): Trans
 				}
 			}
 
-			description = !!description ? description.replace(/^"(.*)"/, '$1') : null;
-			description = !!description ? description.replace(/"{2}/g, '"') : null;
+			description = !!description ? description.replace(/^"(.*)"/, "$1") : null;
+			description = !!description ? description.replace(/"{2}/g, """) : null;
 
 			tags.some((tagTranslation: TagTranslation) => {
 				return tagTranslation.possibleNames.some((possibleName: string) => {
