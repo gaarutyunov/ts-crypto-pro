@@ -11,8 +11,9 @@ import {
 	IStoreAsync
 } from "@delagen/cadesplugin";
 import {ICadesSignedDataExtendedAsync, ICertificateExtendedAsync} from "./extensions";
+import {ICryptoProApi} from "./interfaces";
 
-export class CryptoProApiAsync extends CadesMethods {
+export class CryptoProApiAsync extends CadesMethods implements ICryptoProApi {
 	public async about(): Promise<IAboutAsync> {
 		try {
 			return await this.oAbout() as IAboutAsync;

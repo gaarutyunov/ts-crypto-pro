@@ -10,8 +10,9 @@ import {
 } from "@delagen/cadesplugin";
 import {CertificateAdjuster} from "./helpers";
 import {ICadesSignedDataExtended, ICertificateExtended} from "./extensions";
+import {ICryptoProApi} from "./interfaces";
 
-export class CryptoProApiSync extends CadesMethods {
+export class CryptoProApiSync extends CadesMethods implements ICryptoProApi {
 	public about(): IAbout {
 		try {
 			return this.oAbout() as IAbout;
