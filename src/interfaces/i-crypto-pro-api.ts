@@ -1,8 +1,9 @@
-import {CertificateAdjuster, SyncOrAsyncMapValue} from "../helpers";
-import {ICertificateExtended, ICertificateExtendedAsync} from '../extensions';
+import {CertificateAdjuster} from "../helpers";
+import {ICertificateExtended, ICertificateExtendedAsync} from "../extensions";
+import {IAbout, IAboutAsync} from "@delagen/cadesplugin";
 
 export interface ICryptoProApi {
-	about(): SyncOrAsyncMapValue<"CAdESCOM.About">;
+	about(): IAbout | Promise<IAboutAsync>;
 	getCertsList(): CertificateAdjuster[] | Promise<CertificateAdjuster[]>;
 	currentCadesCert(thumbprint: string): ICertificateExtended | Promise<ICertificateExtendedAsync>;
 	getCert(thumbprint: string): CertificateAdjuster | Promise<CertificateAdjuster>;
