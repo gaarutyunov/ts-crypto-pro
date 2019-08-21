@@ -1,24 +1,38 @@
 {
-  "name": "ts-crypto-pro",
-  "version": "1.0.0",
-  "description": "TypeScript library that uses cadesplugin_api",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gaarutyunov/ts-crypto-pro.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gaarutyunov/ts-crypto-pro/issues"
-  },
-  "homepage": "https://github.com/gaarutyunov/ts-crypto-pro#readme",
-  "devDependencies": {
-    "typescript": "^3.5.3",
-    "tslint": "5.15.0"
-  }
+	"name": "ts-crypto-pro",
+	"version": "1.0.3",
+	"description": "TypeScript library that uses CryptoPro EDS Browser plug-in",
+	"main": "build/index.js",
+	"files": [
+		"build"
+	],
+	"scripts": {
+		"build": "tsc && tsc --declarationDir ./build && webpack --mode production",
+		"start": "webpack-dev-server",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gaarutyunov/ts-crypto-pro.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gaarutyunov/ts-crypto-pro/issues"
+	},
+	"homepage": "https://github.com/gaarutyunov/ts-crypto-pro#readme",
+	"devDependencies": {
+		"typescript": "^3.5.3",
+		"tslint": "5.15.0",
+		"ts-loader": "~6.0.4",
+		"tslib": "~1.10.0",
+		"webpack": "~4.35.3",
+		"webpack-cli": "~3.3.6",
+		"webpack-dev-server": "~3.7.2"
+	},
+	"dependencies": {
+		"@delagen/cadesplugin": "^1.0.2",
+		"bowser": "^2.5.3"
+	}
 }

@@ -4,3 +4,4 @@ export * from "./helpers";
 export * from "./constants";
 export * from "./helpers/cades-methods";
 export * from "./crypto-pro-api-sync";
+//# sourceMappingURL=index.js.map

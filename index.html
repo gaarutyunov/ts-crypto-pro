@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="./build/browser.polyfill.js"></script>
+    <script type="text/javascript" src="./build/init.js"></script>
+	<script>
+
+		function readFile() {
+			window.certificatesApi.getCertsList().then((res) => {
+				const reader = new FileReader();
+				const file = document.querySelector('input[type=file]').files[0];
+				reader.onloadend = () => {
+					const base64 = reader.result;
+					console.log(base64);
+					window.certificatesApi.signBase64(res[0].thumbprint, base64, false).then((res) => console.log(res));
+				};
+
+				if (!!file) {
+					reader.readAsDataURL(file);
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+<input type="file" onchange="readFile()">
+</body>
+</html>
