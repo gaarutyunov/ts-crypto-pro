@@ -2,7 +2,11 @@ import {CadesBrowserPlugin} from "@delagen/cadesplugin";
 import {SyncOrAsyncMap, SyncOrAsyncMapValue} from "./index";
 
 export class CadesMethods {
-	constructor(private readonly _pluginObject: CadesBrowserPlugin) {
+	public get isAsync(): boolean {
+		return this._pluginObject.isAsync;
+	}
+
+	constructor(protected readonly _pluginObject: CadesBrowserPlugin) {
 	}
 
 	public createObject<T extends keyof SyncOrAsyncMap>(objName: T): SyncOrAsyncMapValue<T> {
