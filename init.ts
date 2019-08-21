@@ -1,9 +1,9 @@
 import {CadesBrowserPlugin} from "@delagen/cadesplugin";
-import {CryptoProApi, CryptoProApiAsync, CryptoProApiSync} from './src';
+import {CryptoProApiAsync, CryptoProApiSync, ICryptoProApi} from './src';
 
 window.onload = () => {
 	(<any>window).cadesplugin.then((plugin: CadesBrowserPlugin) => {
-		let cryptoProApi: CryptoProApi;
+		let cryptoProApi: ICryptoProApi;
 		if (plugin.isAsync) {
 			cryptoProApi = new CryptoProApiAsync(plugin);
 		} else {
