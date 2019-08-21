@@ -1,15 +1,17 @@
 {
 	"name": "ts-crypto-pro",
-	"version": "1.0.3",
+	"version": "1.0.8",
 	"description": "TypeScript library that uses CryptoPro EDS Browser plug-in",
-	"main": "build/index.js",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"files": [
-		"build"
+		"dist"
 	],
 	"scripts": {
-		"build": "tsc && tsc --declarationDir ./build && webpack --mode production",
+		"build": "tsc && tsc --declarationDir ./dist && webpack --mode production",
 		"start": "webpack-dev-server",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build-publish": "npm run build && npm publish"
 	},
 	"repository": {
 		"type": "git",

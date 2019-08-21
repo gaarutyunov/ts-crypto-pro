@@ -4,6 +4,13 @@
 		"!node_modules/@types",
 		"dist"
 	],
+	"include": [
+		"src/**/*",
+		"browser.polyfill.ts",
+		"browser.ts",
+		"init.ts",
+		"index.ts"
+	],
 	"compilerOptions": {
 		"module": "es2015",
 		"target": "es5",
@@ -12,6 +19,7 @@
 			"dom",
 			"esnext"
 		],
+		"outDir": "./dist",
 		"declaration": true,
 		"downlevelIteration": true,
 		"experimentalDecorators": true,
