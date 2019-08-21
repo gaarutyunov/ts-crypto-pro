@@ -1,0 +1,1 @@
+{"version":3,"file":"capicom-key-spec.js","sourceRoot":"","sources":["capicom-key-spec.ts"],"names":[],"mappings":"","sourcesContent":["export const enum CAPICOM_KEY_SPEC {\r\n\tCAPICOM_KEY_SPEC_KEYEXCHANGE = 1,\r\n\tCAPICOM_KEY_SPEC_SIGNATURE = 2\r\n}\r\n"]}
