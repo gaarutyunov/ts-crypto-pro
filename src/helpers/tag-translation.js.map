@@ -1,1 +1,0 @@
-{"version":3,"file":"tag-translation.js","sourceRoot":"","sources":["tag-translation.ts"],"names":[],"mappings":"","sourcesContent":["export interface TagTranslation {\r\n\tpossibleNames: string[];\r\n\ttranslation: string;\r\n}\r\n"]}
