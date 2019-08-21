@@ -1,4 +1,0 @@
-export declare const enum CAPICOM_KEY_SPEC {
-    CAPICOM_KEY_SPEC_KEYEXCHANGE = 1,
-    CAPICOM_KEY_SPEC_SIGNATURE = 2
-}
