@@ -11,6 +11,9 @@ test-args.txt
 ~*.docx
 \#*\#
 .\#*
+*.js
+*.map
+*.d.ts
 tests/baselines/local/*
 tests/baselines/local.old/*
 tests/services/baselines/local/*
